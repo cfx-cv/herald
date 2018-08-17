@@ -23,6 +23,6 @@ func Publish(topic common.Topic, message string) {
 		log.Print(err)
 	}
 
-	url := os.Getenv("HERALD_URL")
+	url := os.Getenv("HERALD_URI")
 	http.Post(url+"/publish", "application/json", bytes.NewBuffer(j))
 }
