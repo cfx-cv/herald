@@ -13,7 +13,7 @@ func main() {
 }
 
 func newNatsConn() *nats.Conn {
-	nc, err := nats.Connect(os.Getenv("NATS_URL"))
+	nc, err := nats.Connect(os.Getenv("NATS_URI"))
 	if err != nil {
 		panic(err)
 	}

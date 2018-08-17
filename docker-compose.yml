@@ -3,7 +3,9 @@ version: '3.5'
 services:
   app:
     build: .
-    command: ./scripts/run.sh
+    command: ["./scripts/wait-for-it.sh", "${NATS_URL}", "--", "./scripts/run.sh"]
+    environment:
+      - NATS_URI=${NATS_URI}
     volumes:
       - .:/go/src/github.com/cfx-cv/herald:z
     expose:
@@ -13,6 +15,9 @@ services:
       gofeed:
         aliases:
           - herald_app
+
+  mq:
+    image: nats:1.2.0-linux
 
 networks:
   gofeed:
