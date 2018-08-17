@@ -1,7 +1,9 @@
 package common
 
+type Topic string
+
 const (
-	DijkstraErrors = "errors.dijkstra"
-	NamiErrors     = "errors.nami"
-	SuezErrors     = "errors.suez"
+	DijkstraErrors Topic = "errors.dijkstra"
+	NamiErrors     Topic = "errors.nami"
+	SuezErrors     Topic = "errors.suez"
 )
