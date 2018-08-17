@@ -1,0 +1,19 @@
+version: '3.5'
+
+services:
+  app:
+    build: .
+    command: ./scripts/run.sh
+    volumes:
+      - .:/go/src/github.com/cfx-cv/herald:z
+    expose:
+      - "80"
+    networks:
+      default:
+      gofeed:
+        aliases:
+          - herald_app
+
+networks:
+  gofeed:
+    external: true
