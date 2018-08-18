@@ -20,6 +20,11 @@ services:
     image: nats:1.2.0-linux
     ports:
       - "4222:4222"
+    networks:
+      default:
+      gofeed:
+        aliases:
+          - herald_mq
 
 networks:
   gofeed:
