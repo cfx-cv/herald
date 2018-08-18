@@ -1,4 +1,4 @@
-package public
+package common
 
 import (
 	"bytes"
@@ -6,11 +6,9 @@ import (
 	"log"
 	"net/http"
 	"os"
-
-	"github.com/cfx-cv/herald/pkg/common"
 )
 
-func Publish(topic common.Topic, message string) {
+func Publish(topic Topic, message string) {
 	var data struct {
 		Topic   string `json:"topic"`
 		Message string `json:"message"`
