@@ -8,7 +8,7 @@ jobs:
       - image: circleci/golang:1.10
       - image: circleci/redis:4.0
 
-    working_directory: /go/src/github.com/cfx-cv/nami
+    working_directory: /go/src/github.com/cfx-cv/herald
     steps:
       - checkout
 
