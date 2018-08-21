@@ -12,7 +12,7 @@ services:
       - "80"
     networks:
       default:
-      gofeed:
+      go-feed:
         aliases:
           - herald_app
 
@@ -22,10 +22,10 @@ services:
       - "4222:4222"
     networks:
       default:
-      gofeed:
+      go-feed:
         aliases:
           - herald_mq
 
 networks:
-  gofeed:
+  go-feed:
     external: true
